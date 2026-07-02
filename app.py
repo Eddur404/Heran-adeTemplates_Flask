@@ -39,5 +39,12 @@ def fale():
 def login():
     return render_template('login.html')
 
+@app.route("/teste_insert")
+def teste_insert():
+    u = Usuario("Alba Lopes", "albasandyra@gmail.com", "123456")
+    db.session.add(u)
+    db.session.commit()
+		return 'Dados inseridos com sucesso'
+
 if __name__ == '__main__':
     app.run(debug=True)
